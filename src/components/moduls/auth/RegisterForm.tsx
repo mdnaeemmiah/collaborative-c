@@ -33,7 +33,7 @@ const RegisterForm = () => {
       dispatch(setUser({ user, token: res.data.accessToken }));
 
       toast.success("Registration successful!", { id: toastId });
-      router.push("/"); // Redirect to homepage after registration
+      router.push("/login"); // Redirect to homepage after registration
     } catch (error: any) {
       toast.error(error?.message || "Registration failed", { id: toastId });
     }
@@ -41,7 +41,7 @@ const RegisterForm = () => {
 
   return (
     <Row justify="center" align="middle" style={{ height: "100vh" }}>
-      <div className="w-full max-w-md p-8 space-y-6 bg-white shadow-lg rounded-2xl">
+      <div className="w-full max-w-md p-8 space-y-6 border-2 shadow-lg rounded-2xl">
         <h2 className="text-2xl font-semibold text-center text-gray-700">Register</h2>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
