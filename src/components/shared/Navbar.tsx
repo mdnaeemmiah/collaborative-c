@@ -48,8 +48,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="w-full shadow-md px-4 py-3  container mx-auto">
-      <div className="flex flex-wrap items-center justify-between max-w-7xl mx-auto">
+    <nav className="w-full shadow-md px-4 py-3   ">
+      <div className="flex flex-wrap items-center justify-between container mx-auto">
         {/* Left: Logo */}
         <Link href="/" className="text-xl font-bold text-blue-600 cursor-pointer">
           Collaborative
