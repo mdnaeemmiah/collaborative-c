@@ -10,7 +10,7 @@ import {
   LogIn,
   LogOut,
   UserCircle
-} from 'lucide-react'; // or use from react-icons if preferred
+} from 'lucide-react';
 
 const user = {
   isLoggedIn: true,
@@ -27,18 +27,29 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between px-6 py-4  shadow-md">
-      {/* Left Side Icons */}
-      <div className="flex items-center gap-6 text-gray-700">
-        <Link href="/" className="flex items-center gap-1 hover:text-blue-600">
-          <Home size={20} /> Home
+    <nav className="flex items-center justify-between px-6 py-4 shadow-md">
+      {/* Left Section with Logo and Icons */}
+      <div className="flex items-center gap-8 text-gray-700">
+        {/* Logo/Brand */}
+        <Link href="/" className="text-xl font-bold text-blue-600">
+          Collaborative
         </Link>
-        <Link href="/task" className="flex items-center gap-1 hover:text-blue-600">
-          <CheckSquare size={20} /> Task
-        </Link>
-        <Link href="/notification" className="flex items-center gap-1 hover:text-blue-600">
-          <Bell size={20} /> Notification
-        </Link>
+      </div>
+
+      <div>
+        
+        {/* Navigation Icons */}
+        <div className="flex items-center gap-6">
+          <Link href="/" className="flex items-center gap-1 hover:text-blue-600">
+            <Home size={20} /> Home
+          </Link>
+          <Link href="/task" className="flex items-center gap-1 hover:text-blue-600">
+            <CheckSquare size={20} /> Task
+          </Link>
+          <Link href="/notification" className="flex items-center gap-1 hover:text-blue-600">
+            <Bell size={20} /> Notification
+          </Link>
+        </div>
       </div>
 
       {/* Right Side */}
@@ -64,12 +75,12 @@ const Navbar = () => {
               className="rounded-full"
             />
             {dropdownOpen && (
-              <div className="absolute right-0 mt-2 w-40  shadow-md rounded-md border z-50">
+              <div className="absolute right-0 mt-2 w-40 shadow-md rounded-md border z-50 bg-white">
                 <button
                   onClick={() =>
                     user.role === 'admin'
-                      ? window.location.href = '/dashboard/admin'
-                      : window.location.href = '/dashboard/user'
+                      ? (window.location.href = '/dashboard/admin')
+                      : (window.location.href = '/dashboard/user')
                   }
                   className="flex items-center w-full px-4 py-2 hover:bg-gray-100"
                 >
