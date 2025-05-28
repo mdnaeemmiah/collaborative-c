@@ -1,9 +1,10 @@
+import LoginForm from '@/components/moduls/auth/Loginform';
 import React from 'react';
 
 const page = () => {
     return (
         <div>
-            <h2>login</h2>
+           <LoginForm></LoginForm>
         </div>
     );
 };

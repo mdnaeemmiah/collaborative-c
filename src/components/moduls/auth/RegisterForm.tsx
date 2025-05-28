@@ -13,7 +13,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { verifyToken } from "@/utils/veryfyToken";
 
-const Register = () => {
+const RegisterForm = () => {
   const dispatch = useAppDispatch();
   const router = useRouter();
   const { control, handleSubmit } = useForm();
@@ -119,4 +119,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegisterForm;

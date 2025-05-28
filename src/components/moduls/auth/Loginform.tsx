@@ -12,7 +12,7 @@ import { setUser, TUser } from "@/redux/features/auth/authSlice";
 import Link from "next/link";
 import { verifyToken } from "@/utils/veryfyToken";
 
-const Login = () => {
+const LoginForm = () => {
   const dispatch = useAppDispatch();
   const { control, handleSubmit } = useForm();
   const [login] = useLoginMutation();
@@ -98,4 +98,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginForm;
