@@ -1,109 +1,104 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import {
   Home,
   Bell,
   CheckSquare,
   LogIn,
   LogOut,
-  UserCircle
-} from 'lucide-react';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { logout } from '@/redux/features/auth/authSlice';
-import {  useRouter } from "next/navigation";
+  UserCircle,
+} from "lucide-react";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { logout } from "@/redux/features/auth/authSlice";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import img1 from "../../assets/images/avatar.jpg"
+import img1 from "../../assets/images/avatar.jpg";
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-    const user = useAppSelector((state) => state.auth.user);
-      const dispatch = useAppDispatch();
-       const router = useRouter();
+  const user = useAppSelector((state) => state.auth.user);
+  const dispatch = useAppDispatch();
+  const router = useRouter();
 
   const handleLogout = () => {
-    dispatch(logout()); 
+    dispatch(logout());
     toast.success("Successfully logged out!");
     setTimeout(() => {
       router.push("/login");
     }, 1500);
   };
 
-
   return (
-    <nav className="flex items-center justify-between px-6 py-4 shadow-md">
-      {/* Left Section with Logo and Icons */}
-      <div className="flex items-center gap-8 text-gray-700">
-        {/* Logo/Brand */}
-        <Link href="/" className="text-xl font-bold text-blue-600">
+    <nav className="w-full shadow-md px-4 py-3 bg-white">
+      <div className="flex flex-wrap items-center justify-between max-w-7xl mx-auto">
+        {/* Left: Logo */}
+        <Link href="/" className="text-xl font-bold text-blue-600 cursor-pointer">
           Collaborative
         </Link>
-      </div>
 
-      <div>
-        
-        {/* Navigation Icons */}
-        <div className="flex items-center gap-6">
-          <Link href="/" className="flex items-center gap-1 hover:text-blue-600">
+        {/* Center: Navigation */}
+        <div className="flex items-center gap-4 flex-wrap text-gray-700 mt-2 sm:mt-0">
+          <Link href="/" className="flex items-center gap-1 hover:text-blue-600 cursor-pointer">
             <Home size={20} /> Home
           </Link>
-          <Link href="/task" className="flex items-center gap-1 hover:text-blue-600">
+          <Link href="/task" className="flex items-center gap-1 hover:text-blue-600 cursor-pointer">
             <CheckSquare size={20} /> Task
           </Link>
-          <Link href="/notification" className="flex items-center gap-1 hover:text-blue-600">
+          <Link href="/notification" className="flex items-center gap-1 hover:text-blue-600 cursor-pointer">
             <Bell size={20} /> Notification
           </Link>
         </div>
-      </div>
 
-      {/* Right Side */}
-      <div className="relative">
-        {!user ? (
-          <Link
-            href="/login"
-            className="flex items-center gap-1 text-blue-600 hover:underline"
-          >
-            <LogIn size={20} /> Login
-          </Link>
-        ) : (
-          <div
-            className="flex items-center gap-2 cursor-pointer"
-            onMouseEnter={() => setDropdownOpen(true)}
-            onMouseLeave={() => setDropdownOpen(false)}
-          >
-<Image
-  src={img1}  // Place avatar.png in public/
-  alt="avatar"
-  width={32}
-  height={32}
-  className="rounded-full"
-/>
-            {dropdownOpen && (
-              <div className="absolute right-0 mt-2 w-40 shadow-md rounded-md border z-50 bg-white">
-                <button
-                  onClick={() =>
-                    user.role === 'admin'
-                      ? (window.location.href = '/dashboard/admin')
-                      : (window.location.href = '/dashboard/user')
-                  }
-                  className="flex items-center w-full px-4 py-2 hover:bg-gray-100"
-                >
-                  <UserCircle size={18} className="mr-2" />
-                  Dashboard
-                </button>
-                <button
-                  onClick={handleLogout}
-                  className="flex items-center w-full px-4 py-2 hover:bg-gray-100 text-red-600"
-                >
-                  <LogOut size={18} className="mr-2" />
-                  Logout
-                </button>
-              </div>
-            )}
-          </div>
-        )}
+        {/* Right: Auth Section */}
+        <div className="relative mt-2 sm:mt-0">
+          {!user ? (
+            <Link href="/login" className="flex items-center gap-1 text-blue-600 hover:underline cursor-pointer">
+              <LogIn size={20} /> Login
+            </Link>
+          ) : (
+<div
+  className="relative flex items-center gap-2 cursor-pointer"
+  onMouseEnter={() => setDropdownOpen(true)}
+  onMouseLeave={() => setDropdownOpen(false)}
+>
+  {/* Avatar */}
+  <Image
+    src={img1}
+    alt="avatar"
+    width={32}
+    height={32}
+    className="rounded-full object-cover"
+  />
+
+  {/* Dropdown */}
+  {dropdownOpen && (
+    <div className="absolute top-full right-0 mt-2 w-40 shadow-lg rounded-md border z-50 ">
+      <button
+        onClick={() =>
+          user.role === "admin"
+            ? (window.location.href = "/dashboard/admin")
+            : (window.location.href = "/dashboard/user")
+        }
+        className="flex items-center w-full px-4 py-2 hover:bg-gray-500 cursor-pointer"
+      >
+        <UserCircle size={18} className="mr-2" />
+        Dashboard
+      </button>
+      <button
+        onClick={handleLogout}
+        className="flex items-center w-full px-4 py-2 hover:bg-gray-500 text-red-600 cursor-pointer"
+      >
+        <LogOut size={18} className="mr-2" />
+        Logout
+      </button>
+    </div>
+  )}
+</div>
+          )}
+        </div>
       </div>
     </nav>
   );
