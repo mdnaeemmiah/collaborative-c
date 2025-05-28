@@ -15,6 +15,7 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { logout } from '@/redux/features/auth/authSlice';
 import {  useRouter } from "next/navigation";
 import { toast } from "sonner";
+import img1 from "../../assets/images/avatar.jpg"
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -73,7 +74,7 @@ const Navbar = () => {
             onMouseLeave={() => setDropdownOpen(false)}
           >
 <Image
-  src="/avatar.png"  // Place avatar.png in public/
+  src={img1}  // Place avatar.png in public/
   alt="avatar"
   width={32}
   height={32}
