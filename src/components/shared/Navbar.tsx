@@ -27,7 +27,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between px-6 py-4 bg-white shadow-md">
+    <nav className="flex items-center justify-between px-6 py-4  shadow-md">
       {/* Left Side Icons */}
       <div className="flex items-center gap-6 text-gray-700">
         <Link href="/" className="flex items-center gap-1 hover:text-blue-600">
@@ -64,7 +64,7 @@ const Navbar = () => {
               className="rounded-full"
             />
             {dropdownOpen && (
-              <div className="absolute right-0 mt-2 w-40 bg-white shadow-md rounded-md border z-50">
+              <div className="absolute right-0 mt-2 w-40  shadow-md rounded-md border z-50">
                 <button
                   onClick={() =>
                     user.role === 'admin'
