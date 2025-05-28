@@ -72,13 +72,13 @@ const Navbar = () => {
             onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}
           >
-            <Image
-              src="https://i.pravatar.cc/30"
-              alt="avatar"
-              width={32}
-              height={32}
-              className="rounded-full"
-            />
+<Image
+  src="/avatar.png"  // Place avatar.png in public/
+  alt="avatar"
+  width={32}
+  height={32}
+  className="rounded-full"
+/>
             {dropdownOpen && (
               <div className="absolute right-0 mt-2 w-40 shadow-md rounded-md border z-50 bg-white">
                 <button
