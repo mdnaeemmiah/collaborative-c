@@ -11,20 +11,25 @@ import {
   LogOut,
   UserCircle
 } from 'lucide-react';
-
-const user = {
-  isLoggedIn: true,
-  name: 'Naeem',
-  role: 'admin'
-};
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { logout } from '@/redux/features/auth/authSlice';
+import {  useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+    const user = useAppSelector((state) => state.auth.user);
+      const dispatch = useAppDispatch();
+       const router = useRouter();
 
   const handleLogout = () => {
-    console.log('User logged out');
-    // Add logout logic here
+    dispatch(logout()); 
+    toast.success("Successfully logged out!");
+    setTimeout(() => {
+      router.push("/login");
+    }, 1500);
   };
+
 
   return (
     <nav className="flex items-center justify-between px-6 py-4 shadow-md">
@@ -54,7 +59,7 @@ const Navbar = () => {
 
       {/* Right Side */}
       <div className="relative">
-        {!user.isLoggedIn ? (
+        {!user ? (
           <Link
             href="/login"
             className="flex items-center gap-1 text-blue-600 hover:underline"
