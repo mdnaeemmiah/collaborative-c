@@ -9,7 +9,7 @@ import {
     fetchBaseQuery,
   } from '@reduxjs/toolkit/query/react';
   import { RootState } from '../store';
-  import { logout, setUser } from '../features/auth/authSlice';
+import { setUser, logout } from '../features/auth/authSlice';
   
   
   const baseQuery = fetchBaseQuery({
