@@ -7,6 +7,7 @@ import {
   useUpdateTaskMutation,
 } from "@/redux/features/task/taskSlice";
 import { Trash2, Edit2, X } from "lucide-react";
+import Link from "next/link";
 
 interface Task {
   _id: string;
@@ -100,7 +101,10 @@ const Page = () => {
 
   return (
     <div className="p-4">
-      <h2 className="text-xl font-bold mb-4">All Tasks</h2>
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-xl font-bold mb-4">All Tasks</h2>
+       <Link href='/dashboard/admin/task/add-task'> <h2 className="border-2 p-1 text-xl font-bold mb-4">Add Tasks</h2></Link>
+      </div>
       <div className="overflow-x-auto">
         <table className="min-w-full border border-gray-300">
           <thead>
