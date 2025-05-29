@@ -92,7 +92,7 @@ const Navbar = () => {
                     onClick={() => {
                       setDropdownOpen(false);
                       if (user.role === "admin") {
-                        router.push("/dashboard/admin");
+                        router.push("/dashboard/admin/dashboard");
                       } else {
                         router.push("/dashboard/user/dashboard");
                       }

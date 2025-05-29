@@ -24,9 +24,6 @@ import {
 import Link from "next/link";
 import { NavMain } from "./nav-main";
 import { NavUser } from "./nav-user";
-import Image from "next/image";
-import img1 from "../../../../app/assets/logo-removebg-preview.png";
-
 const data = {
   navMain: [
     {
@@ -140,11 +137,11 @@ export function AAppSidebar({
             <SidebarMenuButton
               size="lg"
               asChild
-              className="flex items-center justify-center bg-gray-300"
+              className="flex items-center justify-center bg-gray-600"
             >
               <Link href="/">
                 <div>
-                  <Image height={40} width={40} src={img1} alt="image" />
+                 Collaborative
                 </div>
               </Link>
             </SidebarMenuButton>
