@@ -7,7 +7,6 @@ import {
   Map,
   PieChart,
   Send,
-  Settings,
   SquareTerminal,
 } from "lucide-react";
 
@@ -34,13 +33,13 @@ const data = {
     },
     {
       title: "Tasks",
-      url: "/dashboard/admin/tasks",
+      url: "/dashboard/admin/task",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
           title: "All",
-          url: "/dashboard/admin/all-tasks",
+          url: "/dashboard/admin/all-task",
         },
         {
           title: "Add",
@@ -56,11 +55,11 @@ const data = {
       items: [
         {
           title: "All",
-          url: "/dashboard/admin/all-notifications",
+          url: "/dashboard/admin/notifications/all-notifications",
         },
         {
           title: "Add",
-          url: "/dashboard/admin/add-notification",
+          url: "/dashboard/admin/notifications/add-notification",
         }
       ],
     },
