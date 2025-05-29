@@ -2,12 +2,14 @@
 
 import * as React from "react";
 import {
-  Frame,
+  LayoutDashboard,
+  ListTodo,
+  Bell,
   LifeBuoy,
+  MessageCircle,
+  Frame,
   Map,
   PieChart,
-  Send,
-  SquareTerminal,
 } from "lucide-react";
 
 import {
@@ -23,18 +25,19 @@ import {
 import Link from "next/link";
 import { NavMain } from "./nav-main";
 import { NavUser } from "./nav-user";
+
 const data = {
   navMain: [
     {
       title: "Dashboard",
       url: "/dashboard/admin/dashboard",
-      icon: SquareTerminal,
+      icon: LayoutDashboard,
       isActive: true,
     },
     {
       title: "Tasks",
       url: "/dashboard/admin/task",
-      icon: SquareTerminal,
+      icon: ListTodo,
       isActive: true,
       items: [
         {
@@ -44,13 +47,13 @@ const data = {
         {
           title: "Add",
           url: "/dashboard/admin/task/add-task",
-        }
+        },
       ],
     },
     {
       title: "Notifications",
       url: "/dashboard/admin/notifications",
-      icon: SquareTerminal,
+      icon: Bell,
       isActive: true,
       items: [
         {
@@ -60,7 +63,7 @@ const data = {
         {
           title: "Add",
           url: "/dashboard/admin/notifications/add-notification",
-        }
+        },
       ],
     },
   ],
@@ -73,7 +76,7 @@ const data = {
     {
       title: "Feedback",
       url: "#",
-      icon: Send,
+      icon: MessageCircle,
     },
   ],
   projects: [
@@ -99,7 +102,7 @@ export function AAppSidebar({
   ...props
 }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar collapsible="icon" {...props} >
+    <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
@@ -110,7 +113,7 @@ export function AAppSidebar({
             >
               <Link href="/">
                 <div>
-                 Collaborative
+                  Collaborative
                 </div>
               </Link>
             </SidebarMenuButton>
