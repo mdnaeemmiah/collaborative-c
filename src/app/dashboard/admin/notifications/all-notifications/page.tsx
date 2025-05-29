@@ -166,7 +166,7 @@ const NotificationPage = () => {
                     type="text"
                     value={editingNotification.userId}
                     disabled
-                    className="w-full border border-gray-300 rounded px-3 py-2 bg-gray-100 cursor-not-allowed"
+                    className="w-full border border-gray-300 rounded px-3 py-2  cursor-not-allowed"
                   />
                 </div>
               )}
