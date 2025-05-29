@@ -73,14 +73,20 @@ const NotificationPage = () => {
     e.preventDefault();
     if (!editingNotification) return;
 
+    const updatedData = {
+      message: formData.message,
+      read: formData.read,
+    };
+
+    console.log("Updating notification ID:", editingNotification.id);
+    console.log("With data:", updatedData);
+
     try {
       await updateNotification({
         id: editingNotification.id,
-        body: {
-          message: formData.message,
-          read: formData.read,
-        },
+        body: updatedData,
       }).unwrap();
+
       alert("Notification updated successfully");
       closeModal();
     } catch (error) {
@@ -150,7 +156,7 @@ const NotificationPage = () => {
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="border-2 rounded p-6 w-full max-w-md  relative">
+          <div className="border-2 rounded p-6 w-full max-w-md relative ">
             <button
               onClick={closeModal}
               className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
@@ -167,7 +173,7 @@ const NotificationPage = () => {
                     type="text"
                     value={editingNotification.userId}
                     disabled
-                    className="w-full border border-gray-300 rounded px-3 py-2  cursor-not-allowed"
+                    className="w-full border border-gray-300 rounded px-3 py-2 cursor-not-allowed"
                   />
                 </div>
               )}
