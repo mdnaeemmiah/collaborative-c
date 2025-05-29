@@ -45,16 +45,12 @@ const data = {
       url: "/dashboard/customer/needMedicine",
       icon: SquareTerminal,
       isActive: true,
-      items: [
-        {
-          title: "All",
-          url: "/dashboard/customer/needMedicine/all",
-        },
-        {
-          title: "Add",
-          url: "/dashboard/customer/needMedicine/add",
-        }
-      ],
+    },
+    {
+      title: "View Notifications",
+      url: "/dashboard/customer/needMedicine",
+      icon: SquareTerminal,
+      isActive: true,
     },
   ],
   navSecondary: [
