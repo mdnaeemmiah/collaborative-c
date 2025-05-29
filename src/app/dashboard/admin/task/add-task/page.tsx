@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React, { useState } from "react";
@@ -7,9 +8,7 @@ import { useGetUsersQuery } from "@/redux/features/user/userSlice";
 
 const AddTaskPage = () => {
   const [createTask, { isLoading }] = useCreateTaskMutation();
-  const {data}  =useGetUsersQuery(undefined);
-
-  console.log(data,"data from users");
+  const { data: users, isLoading: userLoading } = useGetUsersQuery(undefined);
 
   const [formData, setFormData] = useState({
     title: "",
@@ -19,7 +18,11 @@ const AddTaskPage = () => {
     dueDate: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -31,13 +34,14 @@ const AddTaskPage = () => {
       const taskData = {
         title: formData.title,
         description: formData.description,
-        assignedTo: formData.assignedTo, // must be a valid user ID
+        assignedTo: formData.assignedTo,
         status: formData.status,
         dueDate: formData.dueDate,
       };
 
       await createTask(taskData).unwrap();
       toast.success("Task created successfully!");
+
       setFormData({
         title: "",
         description: "",
@@ -81,16 +85,25 @@ const AddTaskPage = () => {
         </div>
 
         <div>
-          <label className="block font-medium mb-1">Assigned To (User ID)</label>
-          <input
-            type="text"
+          <label className="block font-medium mb-1">Assign to User</label>
+          <select
             name="assignedTo"
             value={formData.assignedTo}
             onChange={handleChange}
             required
-            placeholder="e.g., 683610ee85d14a7116eaa13d"
             className="w-full border border-gray-300 rounded px-3 py-2"
-          />
+          >
+            <option value="">Select a user</option>
+            {userLoading ? (
+              <option disabled>Loading users...</option>
+            ) : (
+              users?.data?.map((user: any) => (
+                <option key={user._id} value={user._id}>
+                  {user.name ? `${user.name} (${user._id})` : user._id}
+                </option>
+              ))
+            )}
+          </select>
         </div>
 
         <div>
@@ -102,10 +115,10 @@ const AddTaskPage = () => {
             required
             className="w-full border border-gray-300 rounded px-3 py-2"
           >
-            <option className="bg-black" value="">Select status</option>
-            <option className="bg-black" value="pending">Pending</option>
-            <option className="bg-black" value="in_progress">In Progress</option>
-            <option className="bg-black" value="completed">Completed</option>
+            <option value="">Select status</option>
+            <option value="pending">Pending</option>
+            <option value="in_progress">In Progress</option>
+            <option value="completed">Completed</option>
           </select>
         </div>
 
