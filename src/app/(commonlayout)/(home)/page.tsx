@@ -1,9 +1,10 @@
+import Home from '@/components/shared/Home';
 import React from 'react';
 
 const page = () => {
     return (
         <div>
-            <h2>home</h2>
+            <Home></Home>
         </div>
     );
 };
