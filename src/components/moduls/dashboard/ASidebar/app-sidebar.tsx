@@ -64,36 +64,6 @@ const data = {
         }
       ],
     },
-    // {
-    //   title: "CustomerManage",
-    //   url: "customerManage",
-    //   icon: SquareTerminal,
-    //   isActive: true,
-    // },
-    {
-      title: "OrderManage",
-      url: "orderManage",
-      icon: SquareTerminal,
-      isActive: true,
-    },
-    {
-      title: "MessageManage",
-      url: "message",
-      icon: SquareTerminal,
-      isActive: true,
-    },
-
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings,
-      items: [
-        {
-          title: "Profile",
-          url: "/profile",
-        },
-      ],
-    },
   ],
   navSecondary: [
     {
