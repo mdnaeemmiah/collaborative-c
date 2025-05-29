@@ -2,13 +2,14 @@
 
 import * as React from "react";
 import {
-  Frame,
+  LayoutDashboard,
+  ListTodo,
+  Bell,
   LifeBuoy,
-  Map,
+  MessageCircle,
+  Frame,
   PieChart,
-  Send,
-  Settings,
-  SquareTerminal,
+  Map,
 } from "lucide-react";
 
 import {
@@ -22,34 +23,28 @@ import {
 } from "@/components/ui/sidebar";
 
 import Link from "next/link";
-// import { NavMain } from "./nav.main";
-
-
-// import img1 from "../../../../app/assets/logo-removebg-preview.png";
 
 import { NavUser } from "./nav.main";
 import { NavMain } from "./nav-user";
-
-// import Logo from "@/app/assets/svgs/Logo";
 
 const data = {
   navMain: [
     {
       title: "Dashboard",
       url: "/dashboard/user/dashboard",
-      icon: SquareTerminal,
+      icon: LayoutDashboard,
       isActive: true,
     },
     {
       title: "View Tasks",
       url: "/dashboard/customer/needMedicine",
-      icon: SquareTerminal,
+      icon: ListTodo,
       isActive: true,
     },
     {
       title: "View Notifications",
       url: "/dashboard/customer/needMedicine",
-      icon: SquareTerminal,
+      icon: Bell,
       isActive: true,
     },
   ],
@@ -62,7 +57,7 @@ const data = {
     {
       title: "Feedback",
       url: "#",
-      icon: Send,
+      icon: MessageCircle,
     },
   ],
   projects: [
@@ -99,7 +94,7 @@ export function CAppSidebar({
             >
               <Link href="/">
                 <div>
-                  Collaborative  {/* <Image height={40} width={40} src={img1} alt="image" /> */}
+                  Collaborative
                 </div>
               </Link>
             </SidebarMenuButton>
