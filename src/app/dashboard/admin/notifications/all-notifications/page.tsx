@@ -6,7 +6,7 @@ import {
   useDeleteNotificationMutation,
   useUpdateNotificationMutation,
 } from "@/redux/features/notification/notificationSlice";
-import { Trash2,  Edit2, X } from "lucide-react";
+import { Trash2, Edit2, X } from "lucide-react";
 
 interface Notification {
   id: string;
@@ -50,7 +50,6 @@ const NotificationPage = () => {
     }
   };
 
-
   const openModal = (notification: Notification) => {
     setEditingNotification(notification);
     setIsModalOpen(true);
@@ -62,7 +61,7 @@ const NotificationPage = () => {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value, type } = e.target;
+    const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
@@ -150,7 +149,7 @@ const NotificationPage = () => {
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="border-2  rounded p-6 w-full max-w-md relative">
+          <div className="border-2 rounded p-6 w-full max-w-md  relative">
             <button
               onClick={closeModal}
               className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
@@ -160,6 +159,17 @@ const NotificationPage = () => {
             </button>
             <h3 className="text-lg font-semibold mb-4">Edit Notification</h3>
             <form onSubmit={handleUpdate} className="space-y-4">
+              {editingNotification && (
+                <div>
+                  <label className="block mb-1 font-medium">User ID</label>
+                  <input
+                    type="text"
+                    value={editingNotification.userId}
+                    disabled
+                    className="w-full border border-gray-300 rounded px-3 py-2 bg-gray-100 cursor-not-allowed"
+                  />
+                </div>
+              )}
               <div>
                 <label className="block mb-1 font-medium">Message</label>
                 <textarea
@@ -178,7 +188,7 @@ const NotificationPage = () => {
                   checked={formData.read}
                   onChange={handleChange}
                 />
-                <label className="font-medium">Read</label>
+                <label className="font-medium">Mark as Read</label>
               </div>
               <button
                 type="submit"
