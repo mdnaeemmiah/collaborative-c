@@ -94,7 +94,7 @@ const Navbar = () => {
                       if (user.role === "admin") {
                         router.push("/dashboard/admin");
                       } else {
-                        router.push("/dashboard/user");
+                        router.push("/dashboard/user/dashboard");
                       }
                     }}
                     className="flex items-center w-full px-4 py-2 hover:bg-gray-500 cursor-pointer"
