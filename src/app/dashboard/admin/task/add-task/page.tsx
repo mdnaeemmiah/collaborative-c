@@ -48,7 +48,7 @@ const AddTaskPage = () => {
   };
 
   return (
-    <div className="p-6 max-w-xl mx-auto">
+    <div className="p-6 max-w-xl mx-auto border-2">
       <Toaster />
       <h2 className="text-2xl font-bold mb-4">Add Task</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
