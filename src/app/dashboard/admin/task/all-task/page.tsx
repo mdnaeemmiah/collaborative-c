@@ -64,7 +64,11 @@ const Page = () => {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -114,7 +118,9 @@ const Page = () => {
                 <tr key={task._id} className="text-center">
                   <td className="px-4 py-2 border">{task.title}</td>
                   <td className="px-4 py-2 border">{task.description}</td>
-                  <td className="px-4 py-2 border capitalize">{task.status.replace("_", " ")}</td>
+                  <td className="px-4 py-2 border capitalize">
+                    {task.status.replace("_", " ")}
+                  </td>
                   <td className="px-4 py-2 border">
                     {new Date(task.dueDate).toLocaleDateString()}
                   </td>
@@ -194,9 +200,18 @@ const Page = () => {
                   required
                   className="w-full border border-gray-300 rounded px-3 py-2"
                 >
-                  <option className="bg-black" value="pending">Pending</option>
-                  <option className="bg-black" value="in_progress">In Progress</option>
-                  <option className="bg-black" value="completed">Completed</option>
+                  <option className="bg-black" value="">
+                    Select status
+                  </option>
+                  <option className="bg-black" value="pending">
+                    Pending
+                  </option>
+                  <option className="bg-black" value="in_progress">
+                    In Progress
+                  </option>
+                  <option className="bg-black" value="completed">
+                    Completed
+                  </option>
                 </select>
               </div>
 
