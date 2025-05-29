@@ -39,11 +39,11 @@ const data = {
       items: [
         {
           title: "All",
-          url: "/dashboard/admin/all-task",
+          url: "/dashboard/admin/task/all-task",
         },
         {
           title: "Add",
-          url: "/dashboard/admin/add-task",
+          url: "/dashboard/admin/task/add-task",
         }
       ],
     },
