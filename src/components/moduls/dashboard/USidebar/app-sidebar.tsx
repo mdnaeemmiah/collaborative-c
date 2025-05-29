@@ -41,7 +41,7 @@ const data = {
       isActive: true,
     },
     {
-      title: "Need Medicine",
+      title: "View Tasks",
       url: "/dashboard/customer/needMedicine",
       icon: SquareTerminal,
       isActive: true,
@@ -54,41 +54,6 @@ const data = {
           title: "Add",
           url: "/dashboard/customer/needMedicine/add",
         }
-      ],
-    },
-    {
-      title: "Need Help",
-      url: "/dashboard/customer/needHelp",
-      icon: SquareTerminal,
-      isActive: true,
-      items: [
-        {
-          title: "All",
-          url: "/dashboard/customer/needHelp/all",
-        },
-        {
-          title: "Add",
-          url: "/dashboard/customer/needHelp/add",
-        },
-      ],
-    },
-    {
-      title: "Order History",
-      url: "orderHistory",
-      icon: SquareTerminal,
-      isActive: true,
-    },
-
-
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings,
-      items: [
-        {
-          title: "Profile",
-          url: "/profile",
-        },
       ],
     },
   ],
