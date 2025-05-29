@@ -26,7 +26,7 @@ import Link from "next/link";
 
 
 // import img1 from "../../../../app/assets/logo-removebg-preview.png";
-import Image from "next/image";
+
 import { NavUser } from "./nav.main";
 import { NavMain } from "./nav-user";
 
