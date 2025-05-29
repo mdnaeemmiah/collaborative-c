@@ -49,14 +49,14 @@ const Navbar = () => {
 
   return (
     <nav className="w-full shadow-md px-4 py-3   ">
-      <div className="flex flex-wrap items-center justify-between container mx-auto">
+      <div className="flex flex-wrap  items-center justify-between container mx-auto">
         {/* Left: Logo */}
         <Link href="/" className="text-xl font-bold text-blue-600 cursor-pointer">
           Collaborative
         </Link>
 
         {/* Center: Navigation */}
-        <div className="flex items-center gap-4 flex-wrap text-gray-700 mt-2 sm:mt-0">
+        <div className="flex items-center gap-4 flex-wrap  mt-2 sm:mt-0">
           <Link href="/" className="flex items-center gap-1 hover:text-blue-600 cursor-pointer">
             <Home size={20} /> Home
           </Link>
