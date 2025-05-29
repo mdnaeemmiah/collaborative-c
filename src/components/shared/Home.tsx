@@ -3,7 +3,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-black ">
       {/* Hero Section */}
       <div
         className="relative h-[80vh] bg-cover bg-center flex items-center justify-center"
@@ -30,10 +30,10 @@ const Home = () => {
       </div>
 
       {/* Features Section */}
-      <div className="py-12 px-6 max-w-6xl mx-auto">
+      <div className="py-12 px-6   bg-black border-t">
         <h2 className="text-3xl font-bold text-center mb-10">Why Choose Us?</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-white rounded-lg shadow p-6">
+          <div className=" rounded-lg shadow p-6 border">
             <h3 className="text-xl font-semibold mb-2">
               Real-Time Collaboration
             </h3>
@@ -42,14 +42,14 @@ const Home = () => {
               delays, just productivity.
             </p>
           </div>
-          <div className="bg-white rounded-lg shadow p-6">
+          <div className=" rounded-lg shadow p-6 border">
             <h3 className="text-xl font-semibold mb-2">Smart Notifications</h3>
             <p className="text-gray-600">
               Stay updated without distractions. Get relevant alerts about
               tasks, meetings, and updates.
             </p>
           </div>
-          <div className="bg-white rounded-lg shadow p-6">
+          <div className=" rounded-lg shadow p-6 border">
             <h3 className="text-xl font-semibold mb-2">Seamless Integration</h3>
             <p className="text-gray-600">
               Easily connect with your tools—Slack, Notion, GitHub, Google
@@ -60,7 +60,7 @@ const Home = () => {
       </div>
 
       {/* Footer CTA */}
-      <div className="bg-blue-100 py-10 text-center">
+      <div className=" py-10 text-center border-t bg-black">
         <h3 className="text-2xl font-bold mb-3">
           Ready to boost your team productivity?
         </h3>
