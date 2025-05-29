@@ -37,13 +37,13 @@ const data = {
     },
     {
       title: "View Tasks",
-      url: "/dashboard/customer/needMedicine",
+      url: "/dashboard/user/viewTasks",
       icon: ListTodo,
       isActive: true,
     },
     {
       title: "View Notifications",
-      url: "/dashboard/customer/needMedicine",
+      url: "/dashboard/user/viewNotifications",
       icon: Bell,
       isActive: true,
     },
