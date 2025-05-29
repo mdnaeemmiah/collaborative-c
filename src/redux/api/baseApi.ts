@@ -70,6 +70,6 @@ import { setUser, logout } from '../features/auth/authSlice';
   export const baseApi = createApi({
     reducerPath: 'baseApi',
     baseQuery: baseQueryWithRefreshToken,
-    tagTypes: ["Task","Notification"],
+    tagTypes: ["Task","Notification","User"],
     endpoints: () => ({}),
   });

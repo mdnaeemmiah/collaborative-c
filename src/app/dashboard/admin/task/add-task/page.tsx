@@ -3,9 +3,13 @@
 import React, { useState } from "react";
 import { useCreateTaskMutation } from "@/redux/features/task/taskSlice";
 import toast, { Toaster } from "react-hot-toast";
+import { useGetUsersQuery } from "@/redux/features/user/userSlice";
 
 const AddTaskPage = () => {
   const [createTask, { isLoading }] = useCreateTaskMutation();
+  const {data}  =useGetUsersQuery(undefined);
+
+  console.log(data,"data from users");
 
   const [formData, setFormData] = useState({
     title: "",
