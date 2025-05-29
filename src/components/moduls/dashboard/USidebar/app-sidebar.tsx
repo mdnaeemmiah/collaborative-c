@@ -25,7 +25,7 @@ import Link from "next/link";
 // import { NavMain } from "./nav.main";
 
 
-import img1 from "../../../../app/assets/logo-removebg-preview.png";
+// import img1 from "../../../../app/assets/logo-removebg-preview.png";
 import Image from "next/image";
 import { NavUser } from "./nav.main";
 import { NavMain } from "./nav-user";
@@ -145,11 +145,11 @@ export function CAppSidebar({
             <SidebarMenuButton
               size="lg"
               asChild
-              className="flex items-center justify-center bg-gray-300"
+              className="flex items-center justify-center bg-gray-600"
             >
               <Link href="/">
                 <div>
-                  <Image height={40} width={40} src={img1} alt="image" />
+                  Collaborative  {/* <Image height={40} width={40} src={img1} alt="image" /> */}
                 </div>
               </Link>
             </SidebarMenuButton>
