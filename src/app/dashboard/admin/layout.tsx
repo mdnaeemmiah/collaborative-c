@@ -1,5 +1,6 @@
 
-import { AAppSidebar } from "@/components/modules/dashboard/ASidebar/app-sidebar";
+
+import { AAppSidebar } from "@/components/moduls/dashboard/ASidebar/app-sidebar";
 import {
   SidebarInset,
   SidebarProvider,

@@ -22,10 +22,14 @@ import {
 } from "@/components/ui/sidebar";
 
 import Link from "next/link";
-import { NavMain } from "./nav-main";
-import { NavUser } from "./nav-user";
+// import { NavMain } from "./nav.main";
+
+
 import img1 from "../../../../app/assets/logo-removebg-preview.png";
 import Image from "next/image";
+import { NavUser } from "./nav.main";
+import { NavMain } from "./nav-user";
+
 // import Logo from "@/app/assets/svgs/Logo";
 
 const data = {

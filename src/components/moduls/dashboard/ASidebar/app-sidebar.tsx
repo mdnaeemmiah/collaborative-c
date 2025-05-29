@@ -31,48 +31,40 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "/dashboard/admin/adminDashboard",
+      url: "/dashboard/admin/dashboard",
       icon: SquareTerminal,
       isActive: true,
     },
     {
-      title: "Doctors",
-      url: "/dashboard/admin/doctors",
+      title: "Tasks",
+      url: "/dashboard/admin/tasks",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
           title: "All",
-          url: "/dashboard/admin/doctors/all",
+          url: "/dashboard/admin/all-tasks",
         },
         {
           title: "Add",
-          url: "/dashboard/admin/doctors/add",
-        },
-        {
-          title: "Trash",
-          url: "/dashboard/admin/doctors/trash",
-        },
+          url: "/dashboard/admin/add-task",
+        }
       ],
     },
     {
-      title: "All-Medicines",
-      url: "/dashboard/admin/medicine",
+      title: "Notifications",
+      url: "/dashboard/admin/notifications",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
           title: "All",
-          url: "/dashboard/admin/medicine/all",
+          url: "/dashboard/admin/all-notifications",
         },
         {
           title: "Add",
-          url: "/dashboard/admin/medicine/add",
-        },
-        {
-          title: "Trash",
-          url: "/dashboard/admin/medicine/trash",
-        },
+          url: "/dashboard/admin/add-notification",
+        }
       ],
     },
     // {
