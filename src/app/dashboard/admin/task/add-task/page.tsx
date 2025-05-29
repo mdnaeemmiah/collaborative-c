@@ -93,12 +93,12 @@ const AddTaskPage = () => {
             required
             className="w-full border border-gray-300 rounded px-3 py-2"
           >
-            <option value="">Select a user</option>
+            <option className="bg-black" value="">Select a user</option>
             {userLoading ? (
               <option disabled>Loading users...</option>
             ) : (
               users?.data?.map((user: any) => (
-                <option key={user._id} value={user._id}>
+                <option className="bg-black" key={user._id} value={user._id}>
                   {user.name ? `${user.name} (${user._id})` : user._id}
                 </option>
               ))
@@ -115,10 +115,10 @@ const AddTaskPage = () => {
             required
             className="w-full border border-gray-300 rounded px-3 py-2"
           >
-            <option value="">Select status</option>
-            <option value="pending">Pending</option>
-            <option value="in_progress">In Progress</option>
-            <option value="completed">Completed</option>
+            <option className="bg-black" value="">Select status</option>
+            <option className="bg-black" value="pending">Pending</option>
+            <option className="bg-black" value="in_progress">In Progress</option>
+            <option className="bg-black" value="completed">Completed</option>
           </select>
         </div>
 
