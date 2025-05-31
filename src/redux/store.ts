@@ -17,10 +17,7 @@ const persistConfig = {
   key: 'auth',
   storage,
 };
-const persistConfig = {
-  key: 'auth',
-  storage,
-};
+
 
 const persistedAuthReducer = persistReducer(persistConfig, authReducer);
 
