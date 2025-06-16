@@ -13,10 +13,10 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { baseApi } from './api/baseApi';
 
-const persistConfig = {
-  key: 'auth',
-  storage,
-};
+// const persistConfig = {
+//   key: 'auth',
+//   storage,
+// };
 
 
 const persistedAuthReducer = persistReducer(persistConfig, authReducer);
